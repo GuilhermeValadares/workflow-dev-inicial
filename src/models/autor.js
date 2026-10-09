@@ -64,11 +64,11 @@ class Autor {
     return resultado;
   }
 
-  static async pegaLivrosPorAutor(autorId) { // static porque é um método estático e não precisa de instância da classe
+  // static porque é um método estático e não precisa de instância da classe
+  static async pegaLivrosPorAutor(autorId) {
     return db('livros')
-    .where({ autor_id: autorId})
+      .where({ autor_id: autorId });
   }
-
 }
 
 export default Autor;
