@@ -1,6 +1,9 @@
 FROM node:18-alpine
-ADD . /app
 WORKDIR /app
 RUN apk add --update-cache sqlite
+COPY package*.json ./
+RUN npm install
+COPY . .
 USER node
-CMD npm install
+EXPOSE 3000
+CMD ["npm", "run", "dev"]
