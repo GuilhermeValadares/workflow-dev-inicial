@@ -85,6 +85,20 @@ describe('POST em /autores', () => {
         done();
       });
   });
+
+  it('Deve retornar uma lista de livros', (done) => {
+    const autoresId = 1;// Id de um autor que tem no banco de dados
+    chai.request(app) // Teste de requisição para a rota /autores/:id/livros
+      .get(`/autores/${autoresId}/livros`)
+      .set('Accept', 'application/json')// Define o tipo de conteúdo da requisição
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body).to.have.property('autor');
+        expect(res.body).to.have.property('livros');
+        expect(res.body.livros).to.be.an('array');
+        done();
+      });
+  });
 });
 
 describe('PUT em /autores', () => {
