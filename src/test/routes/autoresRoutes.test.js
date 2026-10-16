@@ -86,7 +86,7 @@ describe('POST em /autores', () => {
       });
   });
 
-  it('Deve retornar uma lista de livros', (done) => {
+  it('Deve retornar uma lista de livros do autor', (done) => {
     const autoresId = 1;// Id de um autor que tem no banco de dados
     chai.request(app) // Teste de requisição para a rota /autores/:id/livros
       .get(`/autores/${autoresId}/livros`)
