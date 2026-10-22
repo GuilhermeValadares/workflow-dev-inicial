@@ -1,4 +1,4 @@
-//import db from '../db/dbconfig.js';
+/* eslint-disable camelcase */
 
 class Evento {
 
@@ -30,10 +30,9 @@ class Evento {
         autor_id: 1,
         created_at: '2026-10-22 10:00:00',
         updated_at: '2026-10-22 10:00:00',
-      }
-    ]
+      },
+    ];
   }
 }
-
 
 export default Evento;
